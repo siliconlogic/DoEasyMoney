@@ -13,35 +13,35 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.SSHKEY}}
-          port: ${{secrets.PORT}}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          port: ${{ secrets.PORT }}
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd ~/DoEasyMoney
             git reset --hard origin/master
             git pull
-
   build-client:
     if: "contains(github.event.commits[0].message, '[need build client]')"
     timeout-minutes: 2
-    needs: [update-files]
+    needs: [ update-files ]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Client
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.SSHKEY}}
-          port: ${{secrets.PORT}}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          port: ${{ secrets.PORT }}
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd ~/DoEasyMoney/client
-            git reset --hard origin/master
-            git pull
+            npm install
+            npm run build
+            pm2 restart client
   deploy-server:
     if: "contains(github.event.commits[0].message, '[need deploy server]')"
     needs: [ update-files ]
@@ -51,9 +51,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          key: ${{secrets.SSHKEY}}
-          port: ${{secrets.PORT}}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          port: ${{ secrets.PORT }}
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
