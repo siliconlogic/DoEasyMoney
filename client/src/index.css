@@ -11,3 +11,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.menu {
+ padding: 10px;
+}
+
+.menu span{
+  padding: 10px;
+}
+
+.container{
+  margin: 0 10%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+form.sign-up, form.login{
+  margin-top: 50px;
+}
+
+form.sign-up input, form.login input{
+  font-size: 18px;
+  padding: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+form.sign-up label {
+  text-align: left;
+}
+
+form.sign-up button, form.login button{
+  font-size: 18px;
+  font-weight: bold;
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.dashboard-form{
+  font-size: 12px;
+}
+
+.dashboard-form input {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+}
