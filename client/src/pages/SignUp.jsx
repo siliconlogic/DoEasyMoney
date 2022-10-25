@@ -21,7 +21,7 @@ export default function SignUp({ server_host }) {
     setDisabled(true);
     setMessage("");
     if (!user.email || !user.password || !secondPassword) {
-      setMessage("Fill all fields!!!");
+      setMessage("Fill all fields");
       setDisabled(false);
       return;
     }
