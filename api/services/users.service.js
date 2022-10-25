@@ -7,8 +7,8 @@ async function save(user) {
 
   const username = "user" + new Date().getTime();
 
-  console.log("user:");
-  console.log(username);
+  //console.log("user:");
+  //console.log(username);
 
   const collection = mongoose.model("users");
   await collection.create({
