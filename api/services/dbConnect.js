@@ -9,7 +9,7 @@ async function dbConnect() {
   let options = {
     user: "admin5",
     pass:
-      process.env.NODE_ENV.trim() === "development"
+      process.env.NODE_ENV === "development"
         ? process.env.MONGO_DEV_PASSWORD
         : process.env.MONGO_PRODUCTION_PASSWORD,
     auth: { authSource: "doeasymoney" },

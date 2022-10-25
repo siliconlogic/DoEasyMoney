@@ -62,7 +62,7 @@ router.post("/login", async (req, res) => {
 
 router.get("/logout", async (req, res) => {
   const domain =
-    process.env.NODE_ENV.trim() === "development"
+    process.env.NODE_ENV === "development"
       ? process.env.DEV_HOST
       : process.env.PROD_HOST;
 
