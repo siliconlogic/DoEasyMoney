@@ -2,7 +2,7 @@ name: deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   update-files:
@@ -25,7 +25,7 @@ jobs:
   build-client:
     if: "contains(github.event.commits[0].message, '[need build client]')"
     timeout-minutes: 2
-    needs: [ update-files ]
+    needs: [update-files]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Client
@@ -44,7 +44,7 @@ jobs:
             pm2 restart client
   deploy-server:
     if: "contains(github.event.commits[0].message, '[need deploy server]')"
-    needs: [ update-files ]
+    needs: [update-files]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Server
