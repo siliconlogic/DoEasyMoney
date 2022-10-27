@@ -20,7 +20,7 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd ~/DoEasyMoney
-            git reset --hard origin/master
+            git reset --hard origin/dev1
             git pull
   build-client:
     if: "contains(github.event.commits[0].message, '[need build client]')"
