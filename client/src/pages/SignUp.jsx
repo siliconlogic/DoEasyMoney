@@ -26,7 +26,7 @@ export default function SignUp({ server_host }) {
       return;
     }
     if (secondPassword !== user.password) {
-      setMessage("Passwords are not match");
+      setMessage("Passwords are not match!");
       setDisabled(false);
       return;
     }
