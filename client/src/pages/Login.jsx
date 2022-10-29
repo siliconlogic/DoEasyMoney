@@ -30,7 +30,7 @@ export default function Login({ server_host }) {
       setMessage("Perform redirecting...");
       navigate("/dashboard");
     } else {
-      setMessage("Wrong login or password");
+      setMessage("Wrong login or password!");
     }
   }
 
