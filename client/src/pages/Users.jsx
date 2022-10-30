@@ -9,7 +9,7 @@ export default function Users({ server_host }) {
   useEffect(loadUsers, []);
 
   function loadUsers() {
-    fetch("http://localhost:9001/users/get/all", {
+    fetch(server_host + "/users/get/all", {
       method: "get",
       credentials: "include",
     })
